@@ -1,0 +1,31 @@
+{
+  "name": "zd-shared-views-collapser",
+  "version": "1.0.0",
+  "description": "Keep Zendesk shared views collapsed",
+  "main": "./src",
+  "scripts": {
+    "build": "tsc && npm run copy-files",
+    "copy-files": "copyfiles -u 1 src/**/*.!(ts) dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tolache/zd-shared-views-collapser.git"
+  },
+  "keywords": [
+    "Zendesk",
+    "Shared",
+    "views",
+    "collapsed"
+  ],
+  "author": "Anatoly Cherenkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tolache/zd-shared-views-collapser/issues"
+  },
+  "homepage": "https://github.com/tolache/zd-shared-views-collapser#readme",
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "typescript": "^5.3.3"
+  }
+}
