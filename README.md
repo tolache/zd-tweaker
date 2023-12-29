@@ -4,6 +4,8 @@
 
 This is a simple Chrome extension to help you keep Zendesk shared views collapsed.
 
+![screenshot](images/screenshot-1.png?raw=true)
+
 ## Privacy Policy
 
 Privacy Policy for Zendesk Shared Views Collapser
