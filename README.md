@@ -1,3 +1,3 @@
 # Zendesk Shared Views Collapser
 
-Keep shared views collapsed in Zendesk.
+This is a simple Chrome extension to help you keep Zendesk shared views collapsed.
