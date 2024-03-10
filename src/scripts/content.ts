@@ -4,7 +4,7 @@ const observer = new MutationObserver((mutations) => {
   mutations.forEach(() => {
     const button: HTMLButtonElement | null = document.querySelector(sharedViewsButtonSelector);
     if (button == null) {
-      console.error("Zendesk Shared Views Collapser extension failed to find the shared views button.");
+      console.error("Zendesk Tweaker extension failed to find the shared views button.");
       return;
     }
     if (document.querySelector(sharedViewsButtonSelector)) {

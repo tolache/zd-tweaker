@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Zendesk Shared Views Collapser",
+  "name": "Zendesk Tweaker",
   "description": "Keep shared views collapsed in Zendesk",
   "version": "1.0",
   "action": {

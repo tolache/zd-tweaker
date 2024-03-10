@@ -1,5 +1,5 @@
 {
-  "name": "zd-shared-views-collapser",
+  "name": "zd-tweaker",
   "version": "1.0.0",
   "description": "Keep Zendesk shared views collapsed",
   "main": "./src",
@@ -21,9 +21,9 @@
   "author": "Anatoly Cherenkov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tolache/zd-shared-views-collapser/issues"
+    "url": "https://github.com/tolache/zd-tweaker/issues"
   },
-  "homepage": "https://github.com/tolache/zd-shared-views-collapser#readme",
+  "homepage": "https://github.com/tolache/zd-tweaker#readme",
   "devDependencies": {
     "copyfiles": "^2.4.1",
     "typescript": "^5.3.3"
