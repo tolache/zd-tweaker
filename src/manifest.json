@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "js": ["scripts/content.js"],
+      "js": ["scripts/content-shared-views.js"],
       "run_at": "document_idle",
       "matches": [
         "https://*.zendesk.com/agent/*"
