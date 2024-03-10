@@ -1,16 +1,14 @@
-const sharedViewsButtonSelector: string = 'button[data-garden-id="accordions.button"][id=":r0:--trigger:0"][aria-expanded="true"]';
+const expandedAccordionButtonSelector: string = 'button[data-garden-id="accordions.button"][aria-expanded="true"]';
 
-const observer = new MutationObserver((mutations) => {
-  mutations.forEach(() => {
-    const button: HTMLButtonElement | null = document.querySelector(sharedViewsButtonSelector);
-    if (button == null) {
-      console.error("Zendesk Tweaker extension failed to find the shared views button.");
-      return;
-    }
-    if (document.querySelector(sharedViewsButtonSelector)) {
-      observer.disconnect();
-      button.click();
-    }
-  });
+const observer = new MutationObserver(() => {
+  const buttons: NodeListOf<HTMLButtonElement> | null = document.querySelectorAll(expandedAccordionButtonSelector);
+  if (buttons.length > 0) {
+    buttons.forEach((button) => {
+      if (button.textContent?.trim() === "Shared") {
+        button.click();
+      }
+    });
+  }
 });
+
 observer.observe(document.body, { childList: true, subtree: true });
