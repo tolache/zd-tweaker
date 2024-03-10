@@ -6,6 +6,15 @@ This is a simple Chrome extension to help you keep Zendesk shared views collapse
 
 ![screenshot](src/images/screenshot-1.png?raw=true)
 
+## How to build from sources (and install unpacked extension)
+
+1. Clone the repo.
+2. Run `npm run build` in the root of the repo.
+3. Open [chrome://extensions/](chrome://extensions/).
+4. Enable **Developer mode**.
+5. Click **Load unpacked**.
+6. Navigate to the **dist** directory under the repo dir and click **Select Folder**.
+
 ## Privacy Policy
 
 Privacy Policy for Zendesk Tweaker
