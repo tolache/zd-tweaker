@@ -39,7 +39,7 @@ Third-Party Services:
 Zendesk Tweaker does not integrate with any third-party services that would compromise your privacy. We do not share any data with external entities.
 
 ### Contact
-If you have any questions or concerns regarding the privacy of Zendesk Tweaker, please file an issue at https://github.com/tolache/zd-shared-views-collapser/issues.
+If you have any questions or concerns regarding the privacy of Zendesk Tweaker, please file an issue at https://github.com/tolache/zd-tweaker/issues.
 
 ### Policy Changes
 This Privacy Policy may be updated to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be effective immediately upon posting the revised policy on the Chrome Web Store or our website.
