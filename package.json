@@ -1,31 +1,43 @@
 {
-  "name": "zd-tweaker",
-  "version": "1.0.0",
-  "description": "Keep Zendesk shared views collapsed",
-  "main": "./src",
+  "name": "zd-tweaker-ts",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.18.96",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
-    "build": "tsc && npm run copy-files",
-    "copy-files": "copyfiles -u 1 src/**/*.!(ts) dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tolache/zd-shared-views-collapser.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "keywords": [
-    "Zendesk",
-    "Shared",
-    "views",
-    "collapsed"
-  ],
-  "author": "Anatoly Cherenkov",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tolache/zd-tweaker/issues"
-  },
-  "homepage": "https://github.com/tolache/zd-tweaker#readme",
-  "devDependencies": {
-    "copyfiles": "^2.4.1",
-    "typescript": "^5.3.3"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
