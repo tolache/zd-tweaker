@@ -10,7 +10,7 @@ module.exports = {
                         require.resolve("react-dev-utils/webpackHotDevClient"),
                         paths.appIndexJs,
                     ].filter(Boolean),
-                    content: paths.appSrc + "/chrome-services/content.ts",
+                    views: paths.appSrc + "/content-scripts/views.ts",
                 },
                 output: {
                     ...webpackConfig.output,

@@ -15,7 +15,7 @@
   "content_scripts": [
     {
       "matches": ["https://*.zendesk.com/agent/*"],
-      "js": ["./static/js/content.js"]
+      "js": ["./static/js/views.js"]
     }
   ],
   "permissions": ["activeTab"]
