@@ -16,6 +16,10 @@
     {
       "matches": ["https://*.zendesk.com/agent/filters/*"],
       "js": ["./static/js/views.js"]
+    },
+    {
+      "matches": ["https://*.zendesk.com/agent/tickets/*"],
+      "js": ["./static/js/ticket.js"]
     }
   ],
   "permissions": ["activeTab"]
