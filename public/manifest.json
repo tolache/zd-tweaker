@@ -14,8 +14,9 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.zendesk.com/agent/filters/*"],
-      "js": ["./static/js/views.js"]
+      "matches": ["https://*.zendesk.com/agent/*"],
+      "js": ["./static/js/views.js"],
+      "run_at": "document_idle"
     }
   ],
   "permissions": ["activeTab"]
