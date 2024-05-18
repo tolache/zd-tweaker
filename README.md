@@ -7,10 +7,11 @@ This is a simple Chrome extension to help you remove clutter from Zendesk UI.
 ### Features
 
 - Keep Shared views minimized on the filters page.    
-![screenshot](screenshots/shared-views.png?raw=true)
+![screenshot](screenshots/1-shared-views.png?raw=true)
 
 - Remove 'Shared with...' information plate on the tickets page.  
-![screenshot](screenshots/ticket-info-plates.png?raw=true)
+![screenshot](screenshots/2-ticket-info-plates-before.png?raw=true)  
+![screenshot](screenshots/3-ticket-info-plates-after.png?raw=true)
 
 ## How to build from sources (and install unpacked extension)
 
