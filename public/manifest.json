@@ -23,6 +23,5 @@
       "js": ["./static/js/ticket.js"],
       "run_at": "document_idle"
     }
-  ],
-  "permissions": ["activeTab"]
+  ]
 }
