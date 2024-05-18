@@ -4,7 +4,13 @@
 
 This is a simple Chrome extension to help you remove clutter from Zendesk UI.
 
-![screenshot](screenshots/screenshot-1.png?raw=true)
+### Features
+
+- Keep Shared views minimized on the filters page.    
+![screenshot](screenshots/shared-views.png?raw=true)
+
+- Remove 'Shared with...' information plate on the tickets page.  
+![screenshot](screenshots/ticket-info-plates.png?raw=true)
 
 ## How to build from sources (and install unpacked extension)
 
@@ -20,7 +26,7 @@ This is a simple Chrome extension to help you remove clutter from Zendesk UI.
 
 Privacy Policy for Zendesk Tweaker
 
-Effective Date: 2023-12-29
+Effective Date: 2024-05-18
 
 Thank you for using Zendesk Tweaker! We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information.
 
@@ -43,7 +49,7 @@ Zendesk Tweaker does not integrate with any third-party services that would comp
 If you have any questions or concerns regarding the privacy of Zendesk Tweaker, please file an issue at https://github.com/tolache/zd-tweaker/issues.
 
 ### Policy Changes
-This Privacy Policy may be updated to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be effective immediately upon posting the revised policy on the Chrome Web Store or our website.
+This Privacy Policy may be updated to reflect changes in our practices or for other operational, legal, or regulatory reasons. Any updates will be effective immediately upon posting the revised policy on the Chrome Web Store or the official [GitHub repo](https://github.com/tolache/zd-tweaker).
 
 By using Zendesk Tweaker, you signify your acceptance of this Privacy Policy. If you do not agree with this policy, please do not use the extension.
 
