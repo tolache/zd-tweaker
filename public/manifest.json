@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Zendesk Tweaker",
   "description": "Keep shared views collapsed in Zendesk",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "action": {
     "default_popup": "index.html",
     "default_title": "Zendesk Tweaker"
@@ -14,13 +14,21 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://*.zendesk.com/agent/*"],
-      "js": ["./static/js/views.js"],
+      "matches": [
+        "https://*.zendesk.com/agent/*"
+      ],
+      "js": [
+        "./static/js/views.js"
+      ],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://*.zendesk.com/agent/*"],
-      "js": ["./static/js/ticket.js"],
+      "matches": [
+        "https://*.zendesk.com/agent/*"
+      ],
+      "js": [
+        "./static/js/ticket.js"
+      ],
       "run_at": "document_idle"
     }
   ]
