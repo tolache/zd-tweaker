@@ -7,7 +7,24 @@ body {
 h1 {
     white-space: nowrap;
     font-size: 1.25em;
-    margin: 0 0 5px;
+    margin-bottom: 1em;
+}
+
+.feature-toggle {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.feature-toggle > input {
+    margin-right: 0.5em;
+}
+
+.feature-toggle > label {
+    white-space: nowrap;
+}
+
+footer {
+    margin-top: 1em;
 }
 
 .App-github-logo,

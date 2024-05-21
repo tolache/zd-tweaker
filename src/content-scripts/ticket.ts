@@ -18,4 +18,25 @@ const observer = new MutationObserver(() => {
     }
 });
 
-observer.observe(document, {attributes: true, subtree: true});
+(async () => {
+    const hidden = await isTicketInfoBarsHidden();
+    if (hidden) {
+        observer.observe(document, {attributes: true, subtree: true});
+    }
+})();
+
+async function isTicketInfoBarsHidden(): Promise<boolean> {
+    let hideTicketInfoBarsStorageValue: boolean = false;
+    await new Promise((resolve, reject) => {
+        chrome.storage.local.get(["hideTicketInfoBars"], function (result) {
+            if(chrome.runtime.lastError) {
+                console.error("Error reading hideTicketInfoBars from storage: ", chrome.runtime.lastError);
+                return reject(chrome.runtime.lastError);
+            }
+            hideTicketInfoBarsStorageValue = result?.hideTicketInfoBars;
+            resolve(hideTicketInfoBarsStorageValue);
+        });
+    });
+
+    return hideTicketInfoBarsStorageValue;
+}
