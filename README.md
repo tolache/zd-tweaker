@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a simple Chrome extension to help you remove clutter from Zendesk UI.
+This is a simple Chrome extension that removes clutter from Zendesk UI.
 
 ### Features
 
