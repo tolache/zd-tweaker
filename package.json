@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node prebuild.js && craco build",
+    "build": "npx tsx prebuild.ts && craco build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,7 +41,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
     "@types/chrome": "^0.0.268"
+    "tsx": "^4.11.0"
   }
 }

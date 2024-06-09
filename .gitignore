@@ -10,6 +10,7 @@
 
 # production
 /build
+prebuild.js
 
 # misc
 .DS_Store
