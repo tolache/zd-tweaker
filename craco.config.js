@@ -11,8 +11,7 @@ module.exports = {
                         paths.appIndexJs,
                     ].filter(Boolean),
                     views: paths.appSrc + "/content-scripts/views.ts",
-                    ticket: paths.appSrc + "/content-scripts/ticket.ts",
-                    search: paths.appSrc + "/content-scripts/search.ts"
+                    ticket: paths.appSrc + "/content-scripts/ticket.ts"
                 },
                 output: {
                     ...webpackConfig.output,

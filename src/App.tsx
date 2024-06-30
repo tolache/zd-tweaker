@@ -5,7 +5,6 @@ import './App.css';
 function App() {
     const [isSharedViewsCollapsed, setIsSharedViewsCollapsed] = useState(true);
     const [isTicketInfoBarsHidden, setIsTicketInfoBarsHidden] = useState(true);
-    const [isPreventHomeEndHijack, setIsPreventHomeEndHijack] = useState(true);
 
     useEffect(() => {
         chrome.storage.local.get(["collapseSharedViews"], function (result) {
@@ -13,9 +12,6 @@ function App() {
         });
         chrome.storage.local.get(["hideTicketInfoBars"], function (result) {
             setIsTicketInfoBarsHidden(result?.hideTicketInfoBars ?? true);
-        });
-        chrome.storage.local.get("preventHomeEndHijack", function (result) {
-            setIsPreventHomeEndHijack(result?.preventHomeEndHijack ?? true);
         });
     }, []);
 
@@ -37,15 +33,6 @@ function App() {
             });
     };
 
-    const handlePreventHomeEndHijackChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const checked = event.target.checked;
-        setIsPreventHomeEndHijack(checked);
-        chrome.storage.local.set({ preventHomeEndHijack: checked },
-            function() {
-                console.log('Prevent Home/End hijack in ticket search set to: ' + checked);
-            });
-    };
-
     return (
         <div className="App">
             <header className="App-header">
@@ -60,11 +47,6 @@ function App() {
                 <input type={"checkbox"} id={"hide-ticket-info-bar"}
                        checked={isTicketInfoBarsHidden} onChange={handleHideTicketInfoBarsChange}/>
                 <label htmlFor={"hide-ticket-info-bar"}>Hide ticket 'Shared with ...' info bar</label>
-            </div>
-            <div className={"feature-toggle"}>
-                <input type={"checkbox"} id={"prevent-home-end-hijack"}
-                       checked={isPreventHomeEndHijack} onChange={handlePreventHomeEndHijackChange}/>
-                <label htmlFor={"prevent-home-end-hijack"}>Prevent Home/End hijack in ticket search</label>
             </div>
             <footer>
                 <img src={githubLogo} className="App-github-logo" alt="logo"/>
