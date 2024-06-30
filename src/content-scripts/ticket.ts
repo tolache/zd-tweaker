@@ -12,7 +12,6 @@ const observer = new MutationObserver(() => {
                     const infoDiv: HTMLDivElement = infoBarParent as HTMLDivElement;
                     infoDiv.style.display = "none";
                 }
-                observer.disconnect();
             }
         });
     }
