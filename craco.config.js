@@ -12,6 +12,7 @@ module.exports = {
                     ].filter(Boolean),
                     views: paths.appSrc + "/content-scripts/views.ts",
                     ticket: paths.appSrc + "/content-scripts/ticket.ts",
+                    search: paths.appSrc + "/content-scripts/search.ts"
                 },
                 output: {
                     ...webpackConfig.output,

@@ -1,4 +1,4 @@
-import React from "react";
+import "./views.ts";
 
 const expandedAccordionButtonSelector: string = 'button[data-garden-id="accordions.button"][aria-expanded="true"]';
 
@@ -22,9 +22,9 @@ const observer = new MutationObserver(() => {
 })();
 
 async function isSharedViewsCollapsed(): Promise<boolean> {
-    let collapseSharedViewsStorageValue: boolean = false;
+    let collapseSharedViewsStorageValue = false;
     await new Promise((resolve, reject) => {
-        chrome.storage.local.get(["collapseSharedViews"], function (result) {
+        chrome.storage.local.get(["collapseSharedViews"], (result) => {
             if(chrome.runtime.lastError) {
                 console.error("Error reading collapseSharedViews from storage: ", chrome.runtime.lastError);
                 return reject(chrome.runtime.lastError);
@@ -33,6 +33,5 @@ async function isSharedViewsCollapsed(): Promise<boolean> {
             resolve(collapseSharedViewsStorageValue);
         });
     });
-
     return collapseSharedViewsStorageValue;
 }

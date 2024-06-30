@@ -1,4 +1,4 @@
-import React from "react";
+import "./ticket.ts";
 
 const infoBarSelector: string = '.conversation-polaris > div > div';
 
@@ -26,9 +26,9 @@ const observer = new MutationObserver(() => {
 })();
 
 async function isTicketInfoBarsHidden(): Promise<boolean> {
-    let hideTicketInfoBarsStorageValue: boolean = false;
+    let hideTicketInfoBarsStorageValue = false;
     await new Promise((resolve, reject) => {
-        chrome.storage.local.get(["hideTicketInfoBars"], function (result) {
+        chrome.storage.local.get(["hideTicketInfoBars"], (result) => {
             if(chrome.runtime.lastError) {
                 console.error("Error reading hideTicketInfoBars from storage: ", chrome.runtime.lastError);
                 return reject(chrome.runtime.lastError);
@@ -37,6 +37,5 @@ async function isTicketInfoBarsHidden(): Promise<boolean> {
             resolve(hideTicketInfoBarsStorageValue);
         });
     });
-
     return hideTicketInfoBarsStorageValue;
 }
