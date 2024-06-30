@@ -32,7 +32,11 @@ async function isTicketInfoBarsHidden(): Promise<boolean> {
                 console.error("Error reading hideTicketInfoBars from storage: ", chrome.runtime.lastError);
                 return reject(chrome.runtime.lastError);
             }
-            hideTicketInfoBarsStorageValue = result?.hideTicketInfoBars;
+            if (result?.hideTicketInfoBars === undefined) {
+                hideTicketInfoBarsStorageValue = true;
+            } else {
+                hideTicketInfoBarsStorageValue = result?.hideTicketInfoBars;
+            }
             resolve(hideTicketInfoBarsStorageValue);
         });
     });

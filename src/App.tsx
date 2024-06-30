@@ -8,10 +8,18 @@ function App() {
 
     useEffect(() => {
         chrome.storage.local.get(["collapseSharedViews"], function (result) {
-            setIsSharedViewsCollapsed(result?.collapseSharedViews ?? true);
+            if (result?.collapseSharedViews === undefined) {
+                setIsSharedViewsCollapsed(true);
+            } else {
+                setIsSharedViewsCollapsed(result?.collapseSharedViews);
+            }
         });
         chrome.storage.local.get(["hideTicketInfoBars"], function (result) {
-            setIsTicketInfoBarsHidden(result?.hideTicketInfoBars ?? true);
+            if (result?.hideTicketInfoBars === undefined) {
+                setIsTicketInfoBarsHidden(true);
+            } else {
+                setIsTicketInfoBarsHidden(result?.hideTicketInfoBars);
+            }
         });
     }, []);
 
