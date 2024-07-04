@@ -8,7 +8,13 @@ function App() {
     const [isHideTicketInfoBarsEnabled, setIsHideTicketInfoBarsEnabled] = useState(true);
 
     useEffect(() => {
-        chrome.storage.local.get(["collapseSharedViews", "hideTicketInfoBars"], function (result) {
+        const chromeStorageValues: string[] = ["collapseSharedViews", "hideTicketInfoBars"];
+        chrome.storage.local.get(chromeStorageValues, function (result) {
+            chromeStorageValues.forEach((storageValue) => {
+                if (result?.[storageValue] === undefined) {
+                    chrome.storage.local.set({ [storageValue]: true });
+                }
+            });
             setIsCollapseSharedViewsEnabled(result?.collapseSharedViews ?? true);
             setIsHideTicketInfoBarsEnabled(result?.hideTicketInfoBars ?? true);
         });

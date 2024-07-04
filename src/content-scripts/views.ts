@@ -29,11 +29,7 @@ async function isSharedViewsCollapsed(): Promise<boolean> {
                 console.error("Error reading collapseSharedViews from storage: ", chrome.runtime.lastError);
                 return reject(chrome.runtime.lastError);
             }
-            if (result?.collapseSharedViews === undefined) {
-                collapseSharedViewsStorageValue = true;
-            } else {
-                collapseSharedViewsStorageValue = result?.collapseSharedViews;
-            }
+            collapseSharedViewsStorageValue = result?.collapseSharedViews;
             resolve(collapseSharedViewsStorageValue);
         });
     });
