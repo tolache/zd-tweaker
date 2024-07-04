@@ -1,61 +1,54 @@
 import React, { useEffect, useState } from 'react';
 import githubLogo from './github-mark.svg';
 import './App.css';
+import FeatureToggle from './components/FeatureToggle';
 
 function App() {
-    const [isSharedViewsCollapsed, setIsSharedViewsCollapsed] = useState(true);
-    const [isTicketInfoBarsHidden, setIsTicketInfoBarsHidden] = useState(true);
+    const [isCollapseSharedViewsEnabled, setIsCollapseSharedViewsEnabled] = useState(true);
+    const [isHideTicketInfoBarsEnabled, setIsHideTicketInfoBarsEnabled] = useState(true);
 
     useEffect(() => {
-        chrome.storage.local.get(["collapseSharedViews"], function (result) {
-            if (result?.collapseSharedViews === undefined) {
-                setIsSharedViewsCollapsed(true);
-            } else {
-                setIsSharedViewsCollapsed(result?.collapseSharedViews);
-            }
-        });
-        chrome.storage.local.get(["hideTicketInfoBars"], function (result) {
-            if (result?.hideTicketInfoBars === undefined) {
-                setIsTicketInfoBarsHidden(true);
-            } else {
-                setIsTicketInfoBarsHidden(result?.hideTicketInfoBars);
-            }
+        chrome.storage.local.get(["collapseSharedViews", "hideTicketInfoBars"], function (result) {
+            setIsCollapseSharedViewsEnabled(result?.collapseSharedViews ?? true);
+            setIsHideTicketInfoBarsEnabled(result?.hideTicketInfoBars ?? true);
         });
     }, []);
 
-    const handleCollapseSharedViewsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handleCollapseSharedViewsChange(event: React.ChangeEvent<HTMLInputElement>) {
         const checked = event.target.checked;
-        setIsSharedViewsCollapsed(checked);
+        setIsCollapseSharedViewsEnabled(checked);
         chrome.storage.local.set({ collapseSharedViews: checked },
             function() {
                 console.log('Collapse shared views is set to: ' + checked);
             });
     };
 
-    const handleHideTicketInfoBarsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    function handleHideTicketInfoBarsChange(event: React.ChangeEvent<HTMLInputElement>) {
         const checked = event.target.checked;
-        setIsTicketInfoBarsHidden(checked);
+        setIsHideTicketInfoBarsEnabled(checked);
         chrome.storage.local.set({ hideTicketInfoBars: checked },
             function() {
                 console.log('Hide ticket info bars is set to: ' + checked);
             });
-    };
+    }
 
     return (
         <div className="App">
             <header className="App-header">
                 <h1>Zendesk Tweaker</h1>
             </header>
-            <div className={"feature-toggle"}>
-                <input type={"checkbox"} id={"collapse-shared-views"}
-                       checked={isSharedViewsCollapsed} onChange={handleCollapseSharedViewsChange}/>
-                <label htmlFor={"collapse-shared-views"}>Collapse shared views</label>
-            </div>
-            <div className={"feature-toggle"}>
-                <input type={"checkbox"} id={"hide-ticket-info-bar"}
-                       checked={isTicketInfoBarsHidden} onChange={handleHideTicketInfoBarsChange}/>
-                <label htmlFor={"hide-ticket-info-bar"}>Hide ticket 'Shared with ...' info bar</label>
-            </div>
+            <FeatureToggle
+                id={"collapse-shared-views"}
+                checked={isCollapseSharedViewsEnabled}
+                label={"Collapse shared views"}
+                onChange={handleCollapseSharedViewsChange}
+            />
+            <FeatureToggle
+                id={"hide-ticket-info-bar"}
+                checked={isHideTicketInfoBarsEnabled}
+                label={"Hide ticket 'Shared with ...' info bar"}
+                onChange={handleHideTicketInfoBarsChange}
+            />
             <footer>
                 <img src={githubLogo} className="App-github-logo" alt="logo"/>
                 <a href="https://github.com/tolache/zd-tweaker">tolache/zd-tweaker</a>
