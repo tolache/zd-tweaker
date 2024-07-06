@@ -1,4 +1,5 @@
 import "./ticket.ts";
+import { getChromeStorageValue} from "./_utils";
 
 const infoBarSelector: string = '.conversation-polaris > div > div';
 
@@ -18,23 +19,8 @@ const observer = new MutationObserver(() => {
 });
 
 (async () => {
-    const hidden = await isTicketInfoBarsHidden();
-    if (hidden) {
+    const hideTicketInfoBars = await getChromeStorageValue("hideTicketInfoBars");
+    if (hideTicketInfoBars) {
         observer.observe(document, {attributes: true, subtree: true});
     }
 })();
-
-async function isTicketInfoBarsHidden(): Promise<boolean> {
-    let hideTicketInfoBarsStorageValue = false;
-    await new Promise((resolve, reject) => {
-        chrome.storage.local.get(["hideTicketInfoBars"], (result) => {
-            if(chrome.runtime.lastError) {
-                console.error("Error reading hideTicketInfoBars from storage: ", chrome.runtime.lastError);
-                return reject(chrome.runtime.lastError);
-            }
-            hideTicketInfoBarsStorageValue = result?.hideTicketInfoBars;
-            resolve(hideTicketInfoBarsStorageValue);
-        });
-    });
-    return hideTicketInfoBarsStorageValue;
-}

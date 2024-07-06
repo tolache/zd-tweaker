@@ -27,6 +27,7 @@ function verifyPackageAndManifestVersions() {
 function verifyContentScriptRegistration() {
     let contentScriptFiles = fs.readdirSync(contentScriptsDir);
     contentScriptFiles.forEach(scriptFilename => {
+        if (scriptFilename === "_utils.ts") return;
         verifyContentScriptManifestJsonRegistration(scriptFilename, manifestJsonLocation);
         verifyContentScriptCracoConfigRegistration(scriptFilename, cracoConfigLocation);
     });
