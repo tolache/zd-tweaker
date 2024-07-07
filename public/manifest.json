@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Zendesk Tweaker",
   "description": "Remove Zendesk UI clutter",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "action": {
     "default_popup": "index.html",
     "default_title": "Zendesk Tweaker"

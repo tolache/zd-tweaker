@@ -1,7 +1,7 @@
 import "./views.ts";
 import {getChromeStorageValue} from "./_utils";
 
-const expandedAccordionButtonSelector: string = 'button[data-garden-id="accordions.button"][aria-expanded="true"]';
+const expandedAccordionButtonSelector: string = "button[data-garden-id='accordions.button'][aria-expanded='true']";
 
 const observer = new MutationObserver(() => {
     const buttons: NodeListOf<HTMLButtonElement> | null = document.querySelectorAll(expandedAccordionButtonSelector);

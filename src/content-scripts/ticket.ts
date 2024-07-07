@@ -16,7 +16,6 @@ const observer = new MutationObserver(() => {
             }
 
             if (infoBar.textContent?.trim().startsWith("Follow-up") && infoBar.firstChild?.childNodes) {
-                // TODO: add logic for parent ticket (the one which the current one is a follow up to)
                 const navbarTicketButtonSelector: string = "span.ember-view.btn[data-tracking-id='tabs-section-nav-item-ticket']";
                 const followUpsButtonSelector: string = ".zd-tweaker.follow-ups";
                 const parentTicketButtonSelector: string = ".zd-tweaker.parent-ticket";
