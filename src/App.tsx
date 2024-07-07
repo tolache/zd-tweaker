@@ -52,7 +52,7 @@ function App() {
             <FeatureToggle
                 id={"hide-ticket-info-bar"}
                 checked={isHideTicketInfoBarsEnabled}
-                label={"Hide ticket 'Shared with ...' info bar"}
+                label={"Hide ticket info bars"}
                 onChange={handleHideTicketInfoBarsChange}
             />
             <footer>
