@@ -7,7 +7,7 @@ const observer = new MutationObserver(() => {
     const infoBars: NodeListOf<HTMLDivElement> | null = document.querySelectorAll(infoBarSelector);
     if (infoBars.length > 0) {
         infoBars.forEach((infoBar) => {
-            if (infoBar.textContent?.trim().startsWith("Shared with")) {
+            if (infoBar.textContent?.trim().startsWith("Shared with") || infoBar.textContent?.trim().startsWith("This is an archived ticket")) {
                 let infoBarParent = infoBar.parentNode;
                 if (infoBarParent !== null) {
                     const infoDiv: HTMLDivElement = infoBarParent as HTMLDivElement;
