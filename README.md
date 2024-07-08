@@ -8,12 +8,12 @@ This is a simple Chrome extension that removes clutter from Zendesk UI.
 
 - Remove clutter from the ticket page.  
 
-|                                Before                                |                                After                                 |
-:---------------------------------------------------------------------:|:---------------------------------------------------------------------:
-| ![screenshot](screenshots/1-ticket-info-plates-before.png?raw=true)  | ![screenshot](screenshots/2-ticket-info-plates-after.png?raw=true)   |
+|                Before                                              |                After                                                |
+:-------------------------------------------------------------------:|:-------------------------------------------------------------------:
+|     ![screenshot](screenshots/1-ticket-info-plates-before.png)      |      ![screenshot](screenshots/2-ticket-info-plates-after.png)      |
 
 - Keep Shared views minimized on the filters page.  
-  <img src="screenshots/3-shared-views.png?raw=true" width="400" />
+  <img src="screenshots/3-shared-views.png" width="400" />
   
 ## How to build from sources (and install unpacked extension)
 
