@@ -1,6 +1,6 @@
 {
   "name": "zd-tweaker",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
